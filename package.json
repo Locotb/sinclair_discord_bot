@@ -1,0 +1,14 @@
+{
+  "name": "sinclair_discord_bot",
+  "version": "1.0.0",
+  "description": "The discord bot for the Sinclair Inc discord server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Locotb",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.15.3"
+  }
+}
