@@ -1,0 +1,47 @@
+{
+    "command_init_completed": {
+        "ru": "Инициализация бота завершена"
+    },
+
+    "roles_management_tutorial": {
+        "ru": "Здесь можно получить роли, которые откроют доступ к каналам, посвященным GTA Online.\n\nДля управления ролями используйте кнопки под этим сообщением"
+    },
+    "manage_role": {
+        "ru": "<::> - добавить/убрать роль <@&>"
+    },
+
+    "role_added": {
+        "ru": "Роль <@&> была добавлена"
+    },
+    "role_removed": {
+        "ru": "Роль <@&> была снята"
+    },
+
+    "something_went_wrong": {
+        "ru": "Что-то пошло не так. Пожалуйста, свяжитесь с разработчиком"
+    },
+    "error_occurred": {
+        "ru": "Произошла ошибка"
+    },
+    "button_not_recognized": {
+        "ru": "Кнопка не распознана"
+    },
+    "command_not_recognized": {
+        "ru": "Команда не распознана"
+    },
+    "roles_mng_channel_not_found": {
+        "ru": "Не найден специальный канал для размещения сообщения с управлением ролями"
+    },
+    "interaction_reply_err_description": {
+        "ru": "при отправка ответа на interaction"
+    },
+    "send_roles_tutorial_err_description": {
+        "ru": "при отправке сообщения для управления ролями"
+    },
+    "welcome_reaction_err_description": {
+        "ru": "при реакции на приветственное сообщение"
+    },
+    "role_mng_err_description": {
+        "ru": "при изменении ролей участника"
+    }
+}
