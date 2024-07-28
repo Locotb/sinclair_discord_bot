@@ -25,7 +25,7 @@ class CommandManager {
 
         const buttonsData = [
             { id: buttonsIds.role_gta_online, emoji: emojisIds.gta_online, style: ButtonStyle.Secondary },
-            { id: buttonsIds.role_playstation, emoji: emojisIds.video_game, style: ButtonStyle.Secondary },
+            { id: buttonsIds.role_consoles, emoji: emojisIds.video_game, style: ButtonStyle.Secondary },
         ];
         const buttons = utils.createBtns(buttonsData);
         const channel = interaction.guild.channels.cache.get(channelsIds.roles_management);
@@ -36,7 +36,7 @@ class CommandManager {
 
         let msg = utils.getPhrase('roles_management_tutorial') + '\n' +
                 utils.getPhrase('manage_role').replace('<::>', gtaOnlineEmoji).replace('<@&>', `<@&${rolesIds.gta_online}>`) + '\n' +
-                utils.getPhrase('manage_role').replace('<::>', emojisIds.video_game).replace('<@&>', `<@&${rolesIds.playstation}>`)
+                utils.getPhrase('manage_role').replace('<::>', emojisIds.video_game).replace('<@&>', `<@&${rolesIds.consoles}>`)
     
         try {
             await channel.send({ content: msg, components: buttons });

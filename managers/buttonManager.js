@@ -7,7 +7,7 @@ class ButtonManager {
     async onClickBtn(interaction) {
         let replyOptions = null;
 
-        if ([buttonsIds.role_gta_online, buttonsIds.role_playstation].includes(interaction.customId)) {
+        if ([buttonsIds.role_gta_online, buttonsIds.role_consoles].includes(interaction.customId)) {
             replyOptions = await this.onClickRoleBtn(interaction);
         }
         else {
@@ -23,8 +23,8 @@ class ButtonManager {
         if (interaction.customId === buttonsIds.role_gta_online) {
             roleId = rolesIds.gta_online;
         }
-        else if (interaction.customId === buttonsIds.role_playstation) {
-            roleId = rolesIds.playstation;
+        else if (interaction.customId === buttonsIds.role_consoles) {
+            roleId = rolesIds.consoles;
         }
 
         try {

@@ -8,6 +8,11 @@ const channelsIds = require('./constants/channels.json');
 const emojisIds = require('./constants/emojis.json');
 
 
+bot.on(Events.ClientReady, () => {
+    console.log('=============================');
+    console.log(bot.user.username, 'is running');
+});
+
 bot.on(Events.InteractionCreate, async interaction => {
     let replyOptions = null;
     
