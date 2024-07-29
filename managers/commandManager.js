@@ -34,9 +34,11 @@ class CommandManager {
             return { content: utils.getPhrase('roles_mng_channel_not_found') };
         }
 
-        let msg = utils.getPhrase('roles_management_tutorial') + '\n' +
-                utils.getPhrase('manage_role').replace('<::>', gtaOnlineEmoji).replace('<@&>', `<@&${rolesIds.gta_online}>`) + '\n' +
-                utils.getPhrase('manage_role').replace('<::>', emojisIds.video_game).replace('<@&>', `<@&${rolesIds.consoles}>`)
+        let msg = utils.getPhrase('roles_management_tutorial') + '\n\n' +
+                utils.getPhrase('manage_role').replace('<::>', gtaOnlineEmoji).replace('<@&>', `<@&${rolesIds.gta_online}>`) +
+                '. ' + utils.getPhrase('role_gta_online_description') + '\n' +
+                utils.getPhrase('manage_role').replace('<::>', emojisIds.video_game).replace('<@&>', `<@&${rolesIds.consoles}>`) +
+                '. ' + utils.getPhrase('role_consoles_description');
     
         try {
             await channel.send({ content: msg, components: buttons });
