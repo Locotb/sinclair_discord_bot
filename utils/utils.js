@@ -1,5 +1,7 @@
 const { ActionRowBuilder, ButtonBuilder } = require('discord.js');
 const channelsIds = require('../constants/channels.json');
+const rolesIds = require('../constants/roles.json');
+const emojisIds = require('../constants/emojis.json');
 const phrases = require('../constants/phrases.json');
 
 
@@ -27,6 +29,19 @@ class Utils {
 
     getPhrase(key, lang = 'ru') {
         return phrases[key][lang];
+    }
+
+    getManageRolesMsgContent() {
+        let content =
+            this.getPhrase('roles_management_tutorial') + '\n\n' +
+
+            this.getPhrase('manage_role').replace('<::>', emojisIds.gta_online).replace('<@&>', `<@&${rolesIds.gta_online}>`) +
+            '. ' + this.getPhrase('role_gta_online_description') + '\n' +
+
+            this.getPhrase('manage_role').replace('<::>', emojisIds.video_game).replace('<@&>', `<@&${rolesIds.consoles}>`) +
+            '. ' + this.getPhrase('role_consoles_description');
+
+        return content;
     }
 
     async onError(err, guild, description) {

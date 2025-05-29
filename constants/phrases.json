@@ -39,7 +39,7 @@
         "ru": "Не найден специальный канал для размещения сообщения с управлением ролями"
     },
     "interaction_reply_err_description": {
-        "ru": "при отправка ответа на interaction"
+        "ru": "при отправке ответа на interaction"
     },
     "send_roles_tutorial_err_description": {
         "ru": "при отправке сообщения для управления ролями"

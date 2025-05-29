@@ -3,7 +3,6 @@ const utils = require('../utils/utils.js');
 const buttonsIds = require('../constants/buttons.json');
 const channelsIds = require('../constants/channels.json');
 const emojisIds = require('../constants/emojis.json');
-const rolesIds = require('../constants/roles.json');
 
 
 class CommandManager {
@@ -21,27 +20,22 @@ class CommandManager {
     }
 
     async onCommand_init(interaction) {
-        let gtaOnlineEmoji = interaction.guild.emojis.cache.get(emojisIds.gta_online).toString();
-
-        const buttonsData = [
-            { id: buttonsIds.role_gta_online, emoji: emojisIds.gta_online, style: ButtonStyle.Secondary },
-            { id: buttonsIds.role_consoles, emoji: emojisIds.video_game, style: ButtonStyle.Secondary },
-        ];
-        const buttons = utils.createBtns(buttonsData);
         const channel = interaction.guild.channels.cache.get(channelsIds.roles_management);
 
         if (!channel) {
             return { content: utils.getPhrase('roles_mng_channel_not_found') };
         }
+        
+        const buttonsData = [
+            { id: buttonsIds.role_gta_online, emoji: emojisIds.gta_online, style: ButtonStyle.Secondary },
+            { id: buttonsIds.role_consoles, emoji: emojisIds.video_game, style: ButtonStyle.Secondary },
+        ];
 
-        let msg = utils.getPhrase('roles_management_tutorial') + '\n\n' +
-                utils.getPhrase('manage_role').replace('<::>', gtaOnlineEmoji).replace('<@&>', `<@&${rolesIds.gta_online}>`) +
-                '. ' + utils.getPhrase('role_gta_online_description') + '\n' +
-                utils.getPhrase('manage_role').replace('<::>', emojisIds.video_game).replace('<@&>', `<@&${rolesIds.consoles}>`) +
-                '. ' + utils.getPhrase('role_consoles_description');
+        const buttons = utils.createBtns(buttonsData);
+        const content = utils.getManageRolesMsgContent();
     
         try {
-            await channel.send({ content: msg, components: buttons });
+            await channel.send({ content, components: buttons });
         } catch (err) {
             await utils.onError(err, interaction.guild, utils.getPhrase('send_roles_tutorial_err_description'));
         }
