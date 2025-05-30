@@ -38,6 +38,9 @@ class Utils {
             this.getPhrase('manage_role').replace('<::>', emojisIds.gta_online).replace('<@&>', `<@&${rolesIds.gta_online}>`) +
             '. ' + this.getPhrase('role_gta_online_description') + '\n' +
 
+            this.getPhrase('manage_role').replace('<::>', emojisIds.rp_project_logo).replace('<@&>', `<@&${rolesIds.rp_project}>`) +
+            '. ' + this.getPhrase('role_rp_project_description') + '\n' +
+
             this.getPhrase('manage_role').replace('<::>', emojisIds.video_game).replace('<@&>', `<@&${rolesIds.consoles}>`) +
             '. ' + this.getPhrase('role_consoles_description');
 

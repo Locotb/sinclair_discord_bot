@@ -28,6 +28,7 @@ class CommandManager {
         
         const buttonsData = [
             { id: buttonsIds.role_gta_online, emoji: emojisIds.gta_online, style: ButtonStyle.Secondary },
+            { id: buttonsIds.role_rp_project, emoji: emojisIds.rp_project_logo, style: ButtonStyle.Secondary },
             { id: buttonsIds.role_consoles, emoji: emojisIds.video_game, style: ButtonStyle.Secondary },
         ];
 
